@@ -1,5 +1,13 @@
 <script>
   fetch("./data.json")
-    .then((a) => a.json())
-    .then((a) => document.write(JSON.stringify(a)));
+    .then((data) => data.json())
+    .then(
+      (json) =>
+        (document.querySelector("pre").innerText = JSON.stringify(
+          json,
+          null,
+          4
+        ))
+    );
 </script>
+<pre style="word-wrap: break-word; white-space: pre-wrap;"></pre>
